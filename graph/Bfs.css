@@ -1,0 +1,121 @@
+body {
+    overflow: hidden;
+}
+
+h1 {
+    color: #d2202a;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    font-family: cursive;
+    text-align: center;
+    text-shadow:
+        -0.2px -0.2px 0 #000,
+        0 -0.2px 0 #000,
+        0.2px -0.2px 0 #000,
+        0.2px 0 0 #000,
+        0.2px 0.2px 0 #000,
+        0 0.2px 0 #000,
+        -0.2px 0.2px 0 #000,
+        -0.2px 0 0 #000;
+}
+
+.game-space {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+#GraphBoard {
+    border: 5px solid rgb(108, 29, 130);
+    border-radius: 8px;
+    display: grid;
+    /* background-color: #0f1610; */
+    grid-template-columns: repeat(30, 30px);
+    /* padding: 1px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 10px 15px 25px;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    border: 0.02px solid rgb(69, 65, 65);
+    /* border: 0.01px solid rgb(98, 98, 98); */
+    display: inline-block;
+    margin-top: 0px;
+    transition: 0.3s;
+}
+
+.sort-button {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    height: 45px;
+    font-weight: 600;
+    font-size: 115%;
+    background-color: antiquewhite;
+    transition: transform 0.3s ease-in-out;
+    font-family: cursive;
+    text-shadow:
+        -0.35px -0.35px 0 #fff,
+        0 -0.35px 0 #fff,
+        0.35px -0.35px 0 #fff,
+        0.35px 0 0 #fff,
+        0.35px 0.35px 0 #fff,
+        0 0.35px 0 #fff,
+        -0.35px 0.35px 0 #fff,
+        -0.35px 0 0 #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.sort-button:hover {
+    background-color: rgb(255, 226, 190);
+    transform: scale(1.05);
+    /* color: rgb(72, 181, 72); */
+}
+
+.control-section {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.points {
+    width: 28px;
+    height: 27px;
+    color: white;
+    font-size: 120%;
+    font-weight: 520;
+    padding-top: 2px;
+    text-align: center;
+    cursor: pointer;
+    border: 1.3px solid black;
+    font-family: cursive;
+}
+
+#start-div {
+    background-color: blue;
+}
+
+#end-div {
+    background-color: red;
+}
+
+#tips {
+    font-family: cursive;
+    z-index: -1;
+    position: absolute;
+    border: 1px dashed chocolate;
+    right: 25px;
+    top: 33vh;
+    width: 90px;
+    padding: 16px;
+    font-size: 85%;
+}
+
+@media (max-width: 1200px) {
+    #tips {
+        display: none;
+    }
+}

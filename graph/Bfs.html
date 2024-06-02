@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BfS</title>
+    <link rel="stylesheet" href="Bfs.css" />
+  </head>
+  <body>
+    <h1>Graph Algorithms</h1>
+
+    <div class="game-space">
+      <div id="GraphBoard"></div>
+    </div>
+    <div class="control-section">
+      <div class="points" draggable="true" ondragstart="dragS(event)" id="start-div">S</div>
+      <div class="points" draggable="true" ondragstart="dragE(event)" id="end-div">E</div>
+      
+        <button class="sort-button" onclick="startBfs()">BFS</button>
+        <button class="sort-button" onclick="startDfs()">DFS</button>
+        <button class="sort-button" onclick="reset()">Reset</button>
+    </div>
+    <div id="tips">
+      <b>Tips :</b>
+      <br><br>
+      <div>~ Place points by dragging</div><br>
+      <div>~ Press<b> 'S' </b>to start and stop building walls &#9608; while hovering</div>
+    </div>
+    <div style="width: 1px;" id="whatever" tabindex="-1"></div>
+    <script src="Bfs.js"></script>
+  </body>
+</html>

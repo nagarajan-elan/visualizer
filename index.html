@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <iframe id="frame-0" src="sort/Sorting1.html" title="Iframe Example"></iframe>
+
+    <div id="menu">
+      <img
+        onclick="toggleMenu()"
+        id="menu-img"
+        src="resources/menu-bar.png"
+        width="50px"
+      />
+    </div>
+    <div id="menus" class="menu-options">
+      <div id="op-1" class="menu-option" onclick="show(0)">
+        Tree
+      </div>
+      <div class="menu-option" onclick="show(1)">Graph</div>
+      <div class="menu-option" onclick="show(2)">Sorting</div>
+      <div id="op-n" class="menu-option" onclick="show(3)">Snake Game</div>
+    </div>
+  </body>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    body {
+      height: 100vb;
+      width: 100vw;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+    iframe {
+      height: 100vh;
+      width: 100vw;
+      border: none;
+    }
+    #menu-img {
+      cursor: pointer;
+      transition: 0.6s ease-in-out;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+    #menu-img:hover {
+      transform: scale(1.07);
+    }
+    #menu {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 3;
+      width: 130px;
+      height: 60px;
+      padding: 6px 6px 0px 6px;
+      background-color: white;
+    }
+    .menu-options {
+      position: absolute;
+      top: -230px;
+      left: 0px;
+      transition: 1.3s;
+      width: 130px;
+      border-radius: 5px;
+      background-color: black;
+      color: white;
+      border: 2px solid black;
+    }
+    .menu-options-visible {
+      top: 60px;
+    }
+
+    .menu-option {
+      font-weight: 650;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 50px;
+      border: 0.1px solid white;
+      /* border-bottom: 0.1px solid white; */
+      width: 130px;
+      padding: 10px;
+    }
+
+    .menu-option:hover {
+      border: 0.1px solid black;
+      color: black;
+      background-color: white;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    var showMenu = true;
+    function toggleMenu() {
+      showMenu = !showMenu;
+      if (showMenu)
+        document.getElementById("menus").className =
+          "menu-options menu-options-visible";
+      else document.getElementById("menus").className = "menu-options";
+    }
+    function show(ind) {
+
+      if (ind===0){
+        document.getElementById("frame-0").setAttribute("src", "tree/Tree.html");
+        localStorage.setItem("lastSeen","tree");
+      }
+      if (ind===1){
+        document.getElementById("frame-0").setAttribute("src", "graph/Bfs.html");
+        localStorage.setItem("lastSeen","graph");
+      }
+      if (ind===2){
+        document.getElementById("frame-0").setAttribute("src", "sort/Sorting.html");
+        localStorage.setItem("lastSeen","sort");
+      }
+      if (ind===3){
+        document.getElementById("frame-0").setAttribute("src", "snake/Snake.html");
+        localStorage.setItem("lastSeen","snake");
+      }
+
+      toggleMenu();
+    }
+    function lastSeen(){
+      if(localStorage.getItem("lastSeen")==="tree" || localStorage.getItem("lastSeen")===null){
+        show(0);
+      }
+      else if(localStorage.getItem("lastSeen")==="graph"){
+        show(1);
+      }
+      else if(localStorage.getItem("lastSeen")==="sort"){
+        show(2);
+      }
+      else if(localStorage.getItem("lastSeen")==="snake"){
+        show(3);
+      }
+    }
+
+    lastSeen();
+  </script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SoRtIng</title>
+    <link rel="stylesheet" href="Sorting.css" />
+  </head>
+  <body>
+    <h1>Sorting Algorithms</h1>
+    <div class="game-space">
+      <div id="SortingBoard"></div>
+    </div>
+    <audio id="myAudio" controls>
+      <source src="../resources/Bomb.mp3" type="audio/mpeg" />
+    </audio>
+    <div class="control-section">
+      <div class="button-container">
+        <button class="sort-button" onclick="sort(1)">Bubble Sort</button>
+        <div class="time-info">
+          Worst: O(N<sup>2</sup>)<br />Best:&nbsp; O(N)
+        </div>
+      </div>
+      <div class="button-container">
+        <button class="sort-button" onclick="sort(2)">Insertion Sort</button>
+        <div class="time-info">
+          Worst: O(N<sup>2</sup>)<br />Best:&nbsp; O(N)
+        </div>
+      </div>
+      <div class="button-container">
+        <button class="sort-button" onclick="sort(3)">Quick Sort</button>
+        <div class="time-info">
+          Worst: O(N<sup>2</sup>)<br />Best: O(N log(N) )
+        </div>
+      </div>
+      <div class="button-container">
+        <button class="sort-button" onclick="sort(4)">Merge Sort</button>
+        <div class="time-info">
+          Worst: O(N log(N) )<br />Best:&nbsp; O(N log(N) )
+        </div>
+      </div>
+      <div class="button-container">
+        <button class="sort-button" onclick="restart()">Reset</button>
+        <div class="time-info"><br /><br /></div>
+      </div>
+    </div>
+    <script src="Sorting.js"></script>
+  </body>
+</html>

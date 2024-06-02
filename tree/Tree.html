@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tree</title>
+    <link rel="stylesheet" href="Tree.css" />
+  </head>
+  <body>
+    <h1>Tree Traversal</h1>
+
+    <div class="game-space">
+      <div id="TreeBoard">
+        <div class="row" id="row1">
+          <div id="cell-6" class="cell num-cell">6</div>
+        </div>
+
+        <div class="row" id="row2">
+          <div class="left-joint cell">
+            <hr class="left-half-horizontal" />
+            <hr class="left-half-vertical" />
+            <div class="down-arrow"></div>
+          </div>
+          <div class="horizontal cell">
+            <hr class="horizontal-line" />
+          </div>
+          <div class="horizontal cell">
+            <hr class="horizontal-line" />
+          </div>
+          <div class="joint cell">
+            <hr class="vertical-joint" />
+            <hr class="horizontal-joint" />
+          </div>
+          <div class="horizontal cell">
+            <hr class="horizontal-line" />
+          </div>
+          <div class="horizontal cell">
+            <hr class="horizontal-line" />
+          </div>
+          <div class="right-joint cell">
+            <hr class="right-half-horizontal" />
+            <hr class="right-half-vertical" />
+            <div class="down-arrow"></div>
+          </div>
+        </div>
+
+        <div class="row" id="row3">
+          <div id="cell-4" class="cell num-cell">4</div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div id="cell-9" class="cell num-cell">9</div>
+        </div>
+
+        <div class="row" id="row4">
+          <div class="left-joint cell">
+            <hr class="left-half-horizontal" />
+            <hr class="left-half-vertical" />
+            <div class="down-arrow"></div>
+          </div>
+          <div class="horizontal cell">
+            <hr class="horizontal-line" />
+          </div>
+          <div class="joint cell">
+            <hr class="vertical-joint" />
+            <hr class="horizontal-joint" />
+          </div>
+          <div class="horizontal cell">
+            <hr class="horizontal-line" />
+          </div>
+          <div class="right-joint cell">
+            <hr class="right-half-horizontal" />
+            <hr class="right-half-vertical" />
+            <div class="down-arrow"></div>
+          </div>
+          <div class="cell"></div>
+          <div class="left-joint cell">
+            <hr class="left-half-horizontal" />
+            <hr class="left-half-vertical" />
+            <div class="down-arrow"></div>
+          </div>
+          <div class="horizontal cell">
+            <hr class="horizontal-line" />
+          </div>
+          <div class="joint cell">
+            <hr class="vertical-joint" />
+            <hr class="horizontal-joint" />
+          </div>
+          <div class="horizontal cell">
+            <hr class="horizontal-line" />
+          </div>
+          <div class="right-joint cell">
+            <hr class="right-half-horizontal" />
+            <hr class="right-half-vertical" />
+            <div class="down-arrow"></div>
+          </div>
+        </div>
+
+        <div class="row" id="row5">
+          <div id="cell-2" class="cell num-cell">2</div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div id="cell-5" class="cell num-cell">5</div>
+
+          <div class="cell"></div>
+          <div id="cell-8" class="cell num-cell">8</div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div id="cell-10" class="cell num-cell">10</div>
+        </div>
+
+        <div class="row" id="row6">
+          <div class="left-joint cell">
+            <hr class="left-half-horizontal" />
+            <hr class="left-half-vertical" />
+            <div class="down-arrow"></div>
+          </div>
+          <div class="horizontal cell">
+            <hr class="horizontal-line" />
+          </div>
+          <div class="joint cell">
+            <hr class="vertical-joint" />
+            <hr class="horizontal-joint" />
+          </div>
+          <div class="horizontal cell">
+            <hr class="horizontal-line" />
+          </div>
+          <div class="right-joint cell">
+            <hr class="right-half-horizontal" />
+            <hr class="right-half-vertical" />
+            <div class="down-arrow"></div>
+          </div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+
+          <div class="vertical cell">
+            <hr class="vertical-line" />
+            <div class="down-arrow"></div>
+          </div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+
+        <div class="row" id="row7">
+          <div id="cell-1" class="cell num-cell">1</div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div id="cell-3" class="cell num-cell">3</div>
+
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div id="cell-7" class="cell num-cell">7</div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="stack-holder"  style="display: flex; justify-content: center">
+      <div id="stack-frame" class="stack-frame">
+      </div>
+    </div>
+
+    <div class="control-section">
+      <button class="sort-button" onclick="startPre()">PreOrder</button>
+      <button class="sort-button" onclick="startIn()">Inorder</button>
+      <button class="sort-button" onclick="startPost()">Postorder</button>
+      <button class="sort-button" onclick="startBfs()">BFS</button>
+      <button class="sort-button" onclick="startDfs()">DFS</button>
+      <button class="sort-button" onclick="reset()">Reset</button>
+    </div>
+
+    <div id="node-input">
+      Value
+      <br>
+      <input type="number" id="node">
+    </div>
+    
+    <script src="Tree.js"></script>
+  </body>
+</html>

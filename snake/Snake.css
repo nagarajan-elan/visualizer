@@ -1,0 +1,128 @@
+h1 {
+    color: #d2202a;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    font-family: cursive;
+    text-align: center;
+    text-shadow:
+        -0.2px -0.2px 0 #000,
+        0 -0.2px 0 #000,
+        0.2px -0.2px 0 #000,
+        0.2px 0 0 #000,
+        0.2px 0.2px 0 #000,
+        0 0.2px 0 #000,
+        -0.2px 0.2px 0 #000,
+        -0.2px 0 0 #000;
+}
+
+.game-space {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#SnakeBoard {
+    border: 5px solid rgb(108, 29, 130);
+    border-radius: 8px;
+    display: grid;
+    background-color: #0f1610;
+    grid-template-columns: repeat(21, 35px);
+    box-shadow: rgba(0, 0, 0, 0.35) 10px 15px 25px;
+    padding: 1px;
+
+}
+
+.empty-cell {
+    width: 35px;
+    height: 35px;
+    border: 0.02px solid rgb(69, 65, 65);
+    /* border: 0.01px solid rgb(98, 98, 98); */
+    display: inline-block;
+    margin-top: 0px;
+}
+
+.snake-cell {
+    width: 28px;
+    height: 28px;
+    background-color: #5ad559;
+    display: inline-block;
+    border-radius: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    margin: 2px;
+}
+
+.snake-head {
+    width: 28px;
+    height: 28px;
+    background-color: #4abf4a;
+    display: inline-block;
+    border-radius: 10px;
+    border: 2.5px solid rgb(187, 178, 178);
+    margin: 1px;
+}
+
+.fruit-cell {
+    margin: 1.4px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgb(253, 254, 255);
+    background-color: gold;
+    display: inline-block;
+    border-radius: 14px;
+    /* border: 2px solid rgb(0, 0, 0); */
+}
+
+#end-banner {
+    /* color: white; */
+    font-weight: 400;
+    font-size: 150%;
+    font-family: cursive;
+    transform: scale(0);
+    transition: 0.4s ease-out;
+    width: max-content;
+    height: max-content;
+    padding: 20px;
+    border: 2px solid black;
+    position: absolute;
+    background-color: whitesmoke;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-shadow:
+        -0.35px -0.35px 0 #ff00ff,
+        0 -0.35px 0 #ff00ff,
+        0.35px -0.35px 0 #ff00ff,
+        0.35px 0 0 #ff00ff,
+        0.35px 0.35px 0 #ff00ff,
+        0 0.35px 0 #ff00ff,
+        -0.35px 0.35px 0 #ff00ff,
+        -0.35px 0 0 #ff00ff;
+    border-radius: 24px;
+}
+
+#try-button {
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.4s ease-out;
+    animation: trytry 1s infinite;
+}
+
+#try-button:hover {
+    color: purple;
+}
+
+@keyframes trytry {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+#myAudio {
+    display: none;
+}
